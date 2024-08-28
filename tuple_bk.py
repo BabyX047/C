@@ -1,13 +1,10 @@
-# # Create a tuple of book names
-# favorite_books = ("1984", "To Kill a Mockingbird", "Brave New World", "The Catcher in the Rye", "Pride and Prejudice")
-
-# # Use a for loop to print each book name on a separate line
-# for book in favorite_books:
-#     print(book)
-
 book = 1  # Initialize the counter
+book_names = []  # Initialize an empty list to store book names
 
-while book < 6:  # Continue looping while the counter is less than 6
-    book_name = input("Please enter a book name: ")  # Ask the user for a book name
-    print("Book " + str(book) + ": " + book_name)  # Print the book number and name
-    book += 1  # Increment the counter to eventually end the loop
+while book < 6:  # Proper Python syntax with a colon
+    name = input("Please enter a book name: ")  # Get the book name from user input
+    book_names.append(name)  # Add the book name to the list
+    book += 1  # Increment the counter
+
+# Join the list of book names into a single string separated by commas
+print("Books entered: " + ", ".join(book_names))
