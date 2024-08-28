@@ -1,7 +1,7 @@
 book = 1  # Initialize the counter
 book_names = []  # Initialize an empty list to store book names
 
-while book < 6:  # Proper Python syntax with a colon
+while book < 6: 
     name = input("Please enter a book name: ")  # Get the book name from user input
     book_names.append(name)  # Add the book name to the list
     book += 1  # Increment the counter
