@@ -1,3 +1,5 @@
+#Basic Solution
+
 # # Create an empty dictionary to store the person's information
 # person_info = {}
 
@@ -14,6 +16,10 @@
 # # Print the dictionary
 # print(person_info)
 
+
+
+
+# Iteration one
 
 person_info = {}
 
@@ -38,3 +44,9 @@ try:
 except ValueError as e:
     # Print an error message if the input was incorrect
     print(f"Error: {e}")
+
+
+
+
+
+# Iteration two?
