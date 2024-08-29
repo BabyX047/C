@@ -1,16 +1,15 @@
-# Create an empty dictionary to store the user's information
-user_info = {}
+# Create an empty dictionary to store the person's information
+person_info = {}
 
-# Ask the user for their name, age, and favorite color
-name = input("Enter your name: ")
-age = input("Enter your age: ")
-favorite_color = input("Enter your favorite color: ")
+user_input = input("Enter your name, age, and favorite color (separated by commas): ")
+
+# Split the input string into a list using comma as the delimiter
+name, age, favorite_color = user_input.split(',')
 
 # Store the information in the dictionary
-user_info['name'] = name
-user_info['age'] = age
-user_info['favorite_color'] = favorite_color
+person_info['Name'] = name.strip()
+person_info['Age'] = age.strip()
+person_info['Favorite Color'] = favorite_color.strip()
 
-# Print the dictionary to the console
-print("\nThe information you entered is:")
-print(user_info)
+# Print the dictionary
+print(person_info)
