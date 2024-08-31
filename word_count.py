@@ -1,5 +1,10 @@
-# Store a list of words
-words = input("Enter words separated by a space: ").split()
+# Initialize the words list
+words = []
+
+# Loop until the user has entered at least 5 words
+while len(words) < 5:
+    word = input("Enter a word: ")
+    words.append(word)  # Add the word to the list
 
 # Use list comprehension to create a new list with words that have an odd number of characters
 odd_length_words = [word for word in words if len(word) % 2 != 0]
