@@ -21,8 +21,8 @@ else:
     print(f"The result of {base}^{exponent} is an odd number.")
 
 
-# # Print the result
-# if is_large_power:
-#     print(f"The result of {base}^{exponent} is greater than 5000.")
-# else:
-#     print(f"The result of {base}^{exponent} is not greater than 5000.")
+# Print the result
+if is_large_power:
+    print(f"The result of {base}^{exponent} is greater than 5000.")
+else:
+    print(f"The result of {base}^{exponent} is not greater than 5000.")
