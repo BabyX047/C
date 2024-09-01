@@ -15,8 +15,14 @@ exponent = int(input("Enter the exponent number: "))
 # Call the function with the user-provided inputs and store the result
 is_large_power = large_power(base, exponent)
 
-# Print the result
-if is_large_power:
-    print(f"The result of {base}^{exponent} is greater than 5000.")
+if is_large_power % 2 == 0:
+    print(f"The result of {base}^{exponent} is an even number.")
 else:
-    print(f"The result of {base}^{exponent} is not greater than 5000.")
+    print(f"The result of {base}^{exponent} is an odd number.")
+
+
+# # Print the result
+# if is_large_power:
+#     print(f"The result of {base}^{exponent} is greater than 5000.")
+# else:
+#     print(f"The result of {base}^{exponent} is not greater than 5000.")
