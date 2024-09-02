@@ -11,7 +11,7 @@ def divisible_by_ten(num):
 
 # Get user input
 
-testnum = int(input())
+testnum = int(input("Enter a test number: "))
 
 # Check if the number is divisible by 10
 
