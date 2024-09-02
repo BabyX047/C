@@ -9,12 +9,22 @@ def divisible_by_ten(num):
 # Get user input
 
 testnum = []
-testnumcount = 0
 
-while testnumcount < 3:
-    testnum.append(int(input("Enter a number: ")))
-    testnumcount += 1
+# Loop until the user has entered at least 3 testnums
+while len(testnum) < 3:
+    num_number = len(testnum) + 1
+    if num_number == 1:
+        prompt = "Enter the first testnum: "
+    elif num_number == 2:
+        prompt = "Enter the second testnum: "
+    elif num_number == 3:
+        prompt = "Enter the third testnum: "
+    else:
+        prompt = f"Enter the {num_number}th testnum: "
 
+    # Get the testnum from the user
+    number = int(input(prompt))
+    testnum.append(number)  # Add the testnum to the list
 
 
 
