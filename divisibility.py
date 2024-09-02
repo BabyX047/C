@@ -3,19 +3,25 @@ def divisible_by_ten(num):
     remainder = num % 10
     
     # Check if the remainder is 0
-    if remainder == 0:
-        return True
-    else:
-        return False
+    return remainder == 0
 
 
 # Get user input
 
-testnum = int(input("Enter a test number: "))
+testnum = []
+testnumcount = 0
 
-# Check if the number is divisible by 10
+while testnumcount < 3:
+    testnum.append(int(input("Enter a number: ")))
+    testnumcount += 1
 
-if divisible_by_ten(testnum):
-    print(str(testnum) + " is divisible by 10")
-else:
-    print(str(testnum) + " is not divisible by 10")
+
+
+
+
+# Check if each number is divisible by 10
+for num in testnum:
+    if divisible_by_ten(num):
+        print(str(num) + " is divisible by 10")
+    else:
+        print(str(num) + " is not divisible by 10")
