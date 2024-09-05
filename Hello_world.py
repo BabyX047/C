@@ -8,7 +8,7 @@ coding = input("Want to learn coding? Y/N \n").lower()
 
 if coding == 'n':
     print("\nHope you change your mind soon!")
-    exit()  # Terminates the program immediately
+    exit()
 
 age = int(input("How old are you: \n"))
 
