@@ -14,7 +14,18 @@ if age >= 18:
     choicetovote = input("Do you want to vote? Y/N \n").lower()
 
     if choicetovote == 'y':
-        print("Great, Let's exercise democracy! ")
+        print("\n Great, We have Excellent candidates ")
+        print("\t John ")
+        print("\t Lennox ")
+        print("\t Billie ")
+        print("\t Polik")
+
+        votee = input("Who would you like to vote for?\n ").capitalize()
+
+        if votee in ["John", "Lennox", "Billie", "Polik"]:
+            print(f"\nYou have made an excellent decision in {votee}.\n")
+        else:
+            print("Oops, invalid choice")
     else:
         print("We'll try next time, but dont complain.")
 
