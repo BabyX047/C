@@ -1,3 +1,9 @@
+print("Hello there, What is your name? ")
+
+name = input()
+
+print(("Hello," + name + " What is your age? "))
+
 # Prompt the user to enter their age
 age = int(input("Enter your age: "))
 
