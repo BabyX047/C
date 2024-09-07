@@ -29,8 +29,8 @@ while True:
 
 
 
-# start = int(input("Enter the starting number: "))
-# end = int(input("Enter the ending number: "))
-# for number in range(start, end + 1):
-#     print(f"\nMultiplication Table for {number}:")
-#     generate_multiplication_table(number)
+start = int(input("Enter the starting number: "))
+end = int(input("Enter the ending number: "))
+for number in range(start, end + 1):
+    print(f"\nMultiplication Table for {number}:")
+    generate_multiplication_table(number)
