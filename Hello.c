@@ -6,6 +6,10 @@ int main() {
     char name[50];  
     int age;
     char yorn[3];  // To store "Y" or "N"
+    char chosen_language[20];  // To store the selected language
+
+    // List of available programming languages (for simplicity, you can prompt for these)
+    const char *languages[] = {"C", "Python", "Java", "Javascript"};
     
     printf("Hello World \n");
 
@@ -32,10 +36,23 @@ int main() {
         } else {
             printf("Please enter a valid option.\n");
         }
-
-        
     } else if (age >= 15 && age <= 30) {
-        printf("You could learn any other programming language.\n");
+        printf("You could learn any other programming language. Some options include: C, Python, Java, and Javascript.\n");
+        printf("Which of these would you like to begin with? \n");
+        scanf("%s", chosen_language);  // Taking user input for the programming language
+
+        // String comparison for chosen language
+        if (strcmp(chosen_language, "C") == 0 || strcmp(chosen_language, "c") == 0) {
+            printf("C is a great choice. We'll begin right away!\n");
+        } else if (strcmp(chosen_language, "Python") == 0 || strcmp(chosen_language, "python") == 0) {
+            printf("Python is a fantastic choice for beginners.\n");
+        } else if (strcmp(chosen_language, "Java") == 0 || strcmp(chosen_language, "java") == 0) {
+            printf("Java is a powerful language for building various types of applications.\n");
+        } else if (strcmp(chosen_language, "Javascript") == 0 || strcmp(chosen_language, "javascript") == 0) {
+            printf("Javascript is essential for web development.\n");
+        } else {
+            printf("That's not an option we currently support. Please choose from C, Python, Java, or Javascript.\n");
+        }
     } else {
         printf("Please enter a valid age.\n");
     }
