@@ -8,7 +8,7 @@ int main() {
     char yorn[3];  // To store "Y" or "N"
     char chosen_language[20];  // To store the selected language
     const char *languages[] = {"C", "Python", "Java", "Javascript"};
-    int continue_learning = 1;  // Control variable for the while loop
+    int continue_learning = 1;  // Control variable for while loop
 
     printf("Hello World \n");
 
@@ -36,8 +36,8 @@ int main() {
         }
     } else if (age >= 15 && age <= 30) {
         while (continue_learning) {
-            printf("\nYou could learn any other programming language. \nSome options include: C, Python, Java, and Javascript.\n");
-            printf("Which of these would you like to begin with? \n");
+            printf("\nYou could learn any other programming language.\n \nSome options include: C, Python, Java, and Javascript.\n");
+            printf("\nWhich of these would you like to begin with? \n");
             scanf("%s", chosen_language);
 
             if (strcmp(chosen_language, "C") == 0 || strcmp(chosen_language, "c") == 0) {
@@ -53,7 +53,7 @@ int main() {
             }
 
             // Ask if they want to learn another language
-            printf("\nDo you want to learn another language? Y/N: ");
+            printf("\nWould you want to learn another language in future? Y/N: ");
             scanf("%s", yorn);
 
             if (strcmp(yorn, "N") == 0 || strcmp(yorn, "n") == 0) {
