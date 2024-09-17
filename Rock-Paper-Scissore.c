@@ -39,42 +39,124 @@ void display_scores(int player_score, int computer_score) {
     printf("----------------------\n\n");
 }
 
-int main() {
+// Function to handle the Best of 10 mode
+void best_of_ten() {
+    int player_score = 0, computer_score = 0;
     char player_choice, computer_choice;
-    int player_score = 0, computer_score = 0;  // Initialize scores to 0
-    
-    printf("Welcome to Rock, Paper, Scissors!\n");
-    
-    // Start a loop to keep playing until the player chooses to quit
-    while (1) {
-        // Prompt for player's choice
-        printf("Enter your choice (r for Rock, p for Paper, s for Scissors, q to quit): ");
-        scanf(" %c", &player_choice);  // Note the space before %c to avoid newline issues
-        
-        // Check if the player wants to quit
-        if (player_choice == 'q' || player_choice == 'Q') {
-            printf("Thanks for playing! Goodbye!\n");
-            break;  // Exit the loop and end the game
-        }
 
-        // Check for valid input
+    while (player_score < 6 && computer_score < 6) {  // First to 6 wins
+        printf("Enter your choice (r for Rock, p for Paper, s for Scissors): ");
+        scanf(" %c", &player_choice);
+
         if (player_choice != 'r' && player_choice != 'p' && player_choice != 's') {
             printf("Invalid choice! Please choose 'r', 'p', or 's'.\n");
-            continue;  // Skip the rest of the loop and ask for input again
+            continue;
         }
 
-        // Get computer's choice
         computer_choice = get_computer_choice();
-
-        // Print choices
         printf("You chose: %c\n", player_choice);
         printf("Computer chose: %c\n", computer_choice);
 
-        // Determine the winner and update scores
         determine_winner(player_choice, computer_choice, &player_score, &computer_score);
-
-        // Display the current scores after each round
         display_scores(player_score, computer_score);
+    }
+
+    if (player_score == 6) {
+        printf("You win the Best of 10!\n");
+    } else {
+        printf("Computer wins the Best of 10!\n");
+    }
+}
+
+// Function to handle the Infinite mode
+void infinite_mode() {
+    int player_score = 0, computer_score = 0;
+    char player_choice, computer_choice;
+
+    while (1) {
+        printf("Enter your choice (r for Rock, p for Paper, s for Scissors, q to quit): ");
+        scanf(" %c", &player_choice);
+
+        if (player_choice == 'q') {
+            printf("Thanks for playing! Goodbye!\n");
+            break;
+        }
+
+        if (player_choice != 'r' && player_choice != 'p' && player_choice != 's') {
+            printf("Invalid choice! Please choose 'r', 'p', or 's'.\n");
+            continue;
+        }
+
+        computer_choice = get_computer_choice();
+        printf("You chose: %c\n", player_choice);
+        printf("Computer chose: %c\n", computer_choice);
+
+        determine_winner(player_choice, computer_choice, &player_score, &computer_score);
+        display_scores(player_score, computer_score);
+    }
+}
+
+// Function to handle a custom number of rounds
+void custom_rounds(int total_rounds) {
+    int player_score = 0, computer_score = 0, round = 1;
+    char player_choice, computer_choice;
+
+    while (round <= total_rounds) {
+        printf("\nRound %d of %d\n", round, total_rounds);
+        printf("Enter your choice (r for Rock, p for Paper, s for Scissors): ");
+        scanf(" %c", &player_choice);
+
+        if (player_choice != 'r' && player_choice != 'p' && player_choice != 's') {
+            printf("Invalid choice! Please choose 'r', 'p', or 's'.\n");
+            continue;
+        }
+
+        computer_choice = get_computer_choice();
+        printf("You chose: %c\n", player_choice);
+        printf("Computer chose: %c\n", computer_choice);
+
+        determine_winner(player_choice, computer_choice, &player_score, &computer_score);
+        display_scores(player_score, computer_score);
+
+        round++;
+    }
+
+    printf("\nFinal Scores: \n");
+    display_scores(player_score, computer_score);
+    if (player_score > computer_score) {
+        printf("You win!\n");
+    } else if (player_score < computer_score) {
+        printf("Computer wins!\n");
+    } else {
+        printf("It's a tie!\n");
+    }
+}
+
+int main() {
+    int choice, custom_rounds_input;
+
+    printf("Welcome to Rock, Paper, Scissors!\n");
+    printf("Choose a mode:\n");
+    printf("1. Best of 10\n");
+    printf("2. Infinite\n");
+    printf("3. Custom rounds\n");
+    printf("Enter your choice (1-3): ");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            best_of_ten();
+            break;
+        case 2:
+            infinite_mode();
+            break;
+        case 3:
+            printf("Enter the number of rounds you'd like to play: ");
+            scanf("%d", &custom_rounds_input);
+            custom_rounds(custom_rounds_input);
+            break;
+        default:
+            printf("Invalid choice! Please restart the game and choose a valid option.\n");
     }
 
     return 0;
