@@ -16,21 +16,32 @@ char get_computer_choice() {
         return 's';  // Scissors
 }
 
-// Function to determine the winner
-void determine_winner(char player_choice, char computer_choice) {
+// Function to determine the winner and update scores
+void determine_winner(char player_choice, char computer_choice, int *player_score, int *computer_score) {
     if (player_choice == computer_choice) {
         printf("It's a tie!\n");
     } else if ((player_choice == 'r' && computer_choice == 's') ||
                (player_choice == 'p' && computer_choice == 'r') ||
                (player_choice == 's' && computer_choice == 'p')) {
-        printf("You win!\n");
+        printf("You win this round!\n");
+        (*player_score)++;  // Increment player score
     } else {
-        printf("Computer wins!\n");
+        printf("Computer wins this round!\n");
+        (*computer_score)++;  // Increment computer score
     }
+}
+
+// Function to display the current scores
+void display_scores(int player_score, int computer_score) {
+    printf("\n--- Current Scores ---\n");
+    printf("You: %d\n", player_score);
+    printf("Computer: %d\n", computer_score);
+    printf("----------------------\n\n");
 }
 
 int main() {
     char player_choice, computer_choice;
+    int player_score = 0, computer_score = 0;  // Initialize scores to 0
     
     printf("Welcome to Rock, Paper, Scissors!\n");
     
@@ -59,10 +70,11 @@ int main() {
         printf("You chose: %c\n", player_choice);
         printf("Computer chose: %c\n", computer_choice);
 
-        // Determine the winner
-        determine_winner(player_choice, computer_choice);
+        // Determine the winner and update scores
+        determine_winner(player_choice, computer_choice, &player_score, &computer_score);
 
-        printf("\n");
+        // Display the current scores after each round
+        display_scores(player_score, computer_score);
     }
 
     return 0;
