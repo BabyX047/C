@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>   // for rand() and srand()
-#include <time.h>     // for time()
+#include <time.h>
 
 // Function to get the computer's choice
 char get_computer_choice() {
