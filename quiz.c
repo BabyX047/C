@@ -9,7 +9,7 @@ int ask_question(const char *question, const char *options[], char correct_answe
         printf("%c) %s\n", 'A' + i, options[i]);
     }
 
-    printf("Your answer: A/B/C/D");
+    printf("Your answer: A/B/C/D: ");
     scanf(" %c", &answer);
 
     if (answer == correct_answer || answer == correct_answer + ('a' - 'A')) {
@@ -26,11 +26,13 @@ int main() {
     const char *options1[] = {"Paris", "London", "Rome", "Berlin"};
     const char *options2[] = {"Saturn", "Mars", "Venus", "Jupiter"};
     const char *options3[] = {"Einstein", "Newton", "Galileo", "Curie"};
+    const char *options4[] = {"Python", "Java", "Javascript", "C"};
 
     // Asking questions and updating the score
     score += ask_question("What is the capital of France?", options1, 'A');
     score += ask_question("Which planet is known as the Red Planet?", options2, 'B');
     score += ask_question("Who developed the theory of relativity?", options3, 'A');
+    score += ask_question("What Language is this?", options4, 'D');
 
     // Final score display
     printf("Your final score: %d/3\n", score);
