@@ -9,7 +9,7 @@ int ask_question(const char *question, const char *options[], char correct_answe
         printf("%c) %s\n", 'A' + i, options[i]);
     }
 
-    printf("Your answer: ");
+    printf("Your answer: A/B/C/D");
     scanf(" %c", &answer);
 
     if (answer == correct_answer || answer == correct_answer + ('a' - 'A')) {
