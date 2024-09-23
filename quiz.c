@@ -35,11 +35,11 @@ int main() {
     score += ask_question("What Language is this?", options4, 'D');
 
     // Final score display
-    printf("Your final score: %d/3\n", score);
+    printf("Your final score: %d/4\n", score);
 
-    if (score == 3) {
+    if (score == 4) {
         printf("Excellent! You're a quiz master.\n");
-    } else if (score == 2) {
+    } else if (score == 3) {
         printf("Good job! Keep practicing.\n");
     } else {
         printf("Better luck next time!\n");
