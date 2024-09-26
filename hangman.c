@@ -58,6 +58,7 @@ int main() {
 
     // Main game loop
     while (tries_left > 0) {
+        printf("\nHint: The word is related to '%s'.\n", hint);
         printf("\nWord: %s\n", display_word);
         printf("Tries left: %d\n", tries_left);
         printf("Guessed letters: ");
