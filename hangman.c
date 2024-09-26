@@ -6,13 +6,18 @@
 
 #define MAX_TRIES 6  // Maximum number of incorrect guesses
 
-// Function to select a random word from the predefined list
-const char* get_random_word() {
-    const char* word_list[] = {"computer", "hangman", "programming", "coding", "language", "syntax"};
+// Function to select a random word from the predefined list and provide its hint (category)
+const char* get_random_word_and_hint(const char** hint) {
+    // List of words and their associated hints (categories)
+    const char* word_list[] = {"computer", "hangman", "programming", "dog", "elephant", "syntax"};
+    const char* hint_list[] = {"technology", "game", "coding", "animal", "animal", "coding"};
+
     int word_count = sizeof(word_list) / sizeof(word_list[0]);
 
     srand(time(0));  // Seed for random number generation
     int random_index = rand() % word_count;
+
+    *hint = hint_list[random_index];  // Set the hint based on the chosen word
     return word_list[random_index];
 }
 
@@ -32,7 +37,8 @@ int is_word_guessed(const char* word, const char* display_word) {
 
 // Main function
 int main() {
-    const char* word = get_random_word();  // Get a random word
+    const char* hint;
+    const char* word = get_random_word_and_hint(&hint);  // Get a random word and its hint
     int word_len = strlen(word);
 
     char display_word[word_len + 1];  // To display guessed characters and underscores
@@ -46,6 +52,9 @@ int main() {
     int guessed_count = 0;  // Number of guessed letters
 
     printf("Welcome to Hangman!\n");
+
+    // Display the hint
+    printf("Hint: The word is related to '%s'.\n", hint);
 
     // Main game loop
     while (tries_left > 0) {
