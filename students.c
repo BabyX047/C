@@ -138,3 +138,4 @@ void findTopStudent(struct Student students[], int numStudents) {
     printf("ID: %d\n", students[topIndex].id);
     printf("Average: %.2f\n", students[topIndex].average);
 }
+
